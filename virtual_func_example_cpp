@@ -1,0 +1,30 @@
+#include<iostream>
+using namespace std;
+class Base{
+    public:
+     virtual void display()
+    {
+        cout<<"it is display function of base class"<<endl;
+    }
+};
+class Derived : public Base{
+    public:
+    void display()
+    {
+        cout<<"it is display function of derived class"<<endl;
+    }
+};
+int main()
+{ Derived obj2;
+    Base *p;
+    Base obj1;
+   
+    // p=&obj1;
+    // p->display();
+    // p=&obj2;
+    // p->display();
+    obj2.display();
+    p=&obj2;
+    p->display();
+    obj1.display();
+}
