@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+class Base
+{
+protected:
+    int num1, num2;
+
+public:
+    virtual int sum() = 0;
+    Base(int a, int b)
+    {
+        num1 = a;
+        num2 = b;
+    }
+};
+class Derived : public Base
+{
+public:
+    Derived(int a,int b):Base(a,b){}
+
+    int sum()
+    {
+        return num1 + num2;
+    }
+};
+int main()
+{
+    int value1, value2;
+    cout << "enter value of num1 and num2"<<endl;
+    cin >> value1 >> value2;
+    Base *p;
+    Derived obj(value1, value2);
+    p = &obj;
+    cout<<"sum of given numbers is "<<p->sum();
+    
+}
