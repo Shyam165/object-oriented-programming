@@ -1,0 +1,28 @@
+/************ Assingment = operator overloading can only be implemented through member function only by passing one argument as object ***************/
+#include<iostream>
+using namespace std;
+class Assingment{
+    int a, b;
+    public:
+    Assingment(int x, int y){
+     a=x;
+     b=y;
+    }
+    void display(){
+        cout<<"the value of a is "<<a<<" and the value of b is "<<b<<endl;
+    }
+    void operator =(Assingment obj){
+        a=obj.a;
+        b=obj.b;
+    }
+};
+int main(){
+    Assingment A1(0, 7), A2(5, 6);
+    cout<<"value of a and b before calling assingment operator overloading \n";
+    A1.display();
+    A2.display();
+    cout<<"value of a and b after calling assingment operator overloading \n";
+    A1=A2;
+    A1.display();
+    A2.display();
+}
