@@ -1,0 +1,39 @@
+/*******************decrement operator overloading both pre and post decrement *******************/
+#include<iostream>
+using namespace std;
+class Decrement{
+    int value;
+    public:
+    Decrement(){
+        value=0;
+    }
+    Decrement(int x){
+        value=x;
+    }
+    void putData(){
+        cout<<"value is "<<value<<endl;
+    }
+    Decrement operator --(){
+        Decrement Decr;
+        value=value-1;
+        Decr.value=value;
+        return Decr;
+    }
+    Decrement operator --(int obj){
+        Decrement Decr;
+        Decr.value=value;
+        value=value-1;
+        return Decr;
+    }
+
+};
+int main(){
+    Decrement i(18), j;
+    i.putData();
+    j=i--;
+    i.putData();
+    j.putData();
+    j=--i;
+    i.putData();
+    j.putData();
+}
