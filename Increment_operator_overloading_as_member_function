@@ -1,0 +1,48 @@
+#include<iostream>
+using namespace std;
+// int main(){
+//     int a, b;
+//      a=7;
+//      cout<<a++; // here it will give 7
+//      a++;
+//     cout<<a; // here it will give 8
+//     b=a++;
+//     cout<<b; //here it will give 7
+// }
+
+class Increment{
+    int value;
+    public:
+    Increment(){
+        value=0;
+    }
+    Increment(int x){
+        value=x;
+    }
+    void putData(){
+        cout<<"value is "<<value<<endl;
+    }
+    Increment operator ++(){
+        Increment Incr;
+        value=value+1;
+        Incr.value=value;
+        return Incr;
+    }
+    Increment operator ++(int obj){
+        Increment Incr;
+        Incr.value=value;
+        value=value+1;
+        return Incr;
+    }
+
+};
+int main(){
+    Increment i(18), j;
+    i.putData();
+    j=i++;
+    i.putData();
+    j.putData();
+    j=++i;
+    i.putData();
+    j.putData();
+}
