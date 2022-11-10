@@ -1,0 +1,30 @@
+/************************program on overloading + operator to add two string using member function 
+ by passing only one argument********************/
+#include<iostream>
+#include<string.h>
+using namespace std;
+class String{
+    char str[50];
+    public:
+    void getString(){
+        cout<<"\nEnter String:\n";
+        cin>>str;
+    }
+    void displayString(){
+        cout<<endl<<str<<endl;
+    }
+    String operator +(String S1);
+};
+String String :: operator +(String S1){
+    String S3;
+    strcpy(S3.str , str);
+    strcat(S3.str, S1.str);
+    return S3;
+}
+int main(){
+    String obj1, obj2, obj3;
+    obj1.getString();
+    obj2.getString();
+    obj3=obj1+obj2;
+    obj3.displayString();
+}
