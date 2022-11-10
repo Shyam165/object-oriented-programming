@@ -1,0 +1,25 @@
+/****************program on overloading assingment operator by taking an example of real and complex number**************/
+#include<iostream>
+using namespace std;
+class Complex{
+    int real, complex;
+    public:
+    void getData(){
+        cout<<"enter the real and complex number:\n"<<endl;
+        cin>>real>>complex;
+    }
+    void display(){
+        cout<<real<<" + "<<complex<<"i"<<endl;
+    }
+    void operator =(Complex C1){
+        real=C1.real;
+        complex=C1.complex;
+    }
+};
+int main(){
+    Complex obj1, obj2;
+    obj1.getData();
+    obj1.display();
+    obj2=obj1;
+    obj2.display();
+}
