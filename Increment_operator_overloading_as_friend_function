@@ -1,0 +1,40 @@
+/********************Increment operator overloading using friend function***********************/
+#include<iostream>
+using namespace std;
+class Increment{
+    int value;
+    public:
+    Increment(){
+        value=0;
+    }
+    Increment(int x){
+        value=x;
+    }
+    void putData(){
+        cout<<"value is "<<value<<endl;
+    }
+   friend Increment operator ++(Increment &);
+   friend Increment operator ++(Increment &, int obj1);
+};
+ Increment operator ++(Increment & obj){
+        Increment Incr;
+       obj.value=obj.value+1;
+        Incr.value=obj.value;
+        return Incr;
+    }
+    Increment operator ++(Increment & obj2, int obj1){
+        Increment Incr;
+        Incr.value=obj2.value;
+       obj2.value=obj2.value+1;
+        return Incr;
+    }
+int main(){
+    Increment i(18), j;
+    i.putData();
+    j=i++;
+    i.putData();
+    j.putData();
+    j=++i;
+    i.putData();
+    j.putData();
+}
