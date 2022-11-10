@@ -1,0 +1,29 @@
+/*************program on overloading + operator to concatinate two string as friend function***************/
+#include<iostream>
+#include<string.h>
+using namespace std;
+class String{
+    char str[50];
+    public:
+    void getString(){
+        cout<<"\nEnter String:\n";
+        cin>>str;
+    }
+    void displayString(){
+        cout<<endl<<str<<endl;
+    }
+   friend String operator +(String S1, String S2);
+};
+String  operator +(String S1, String S2){
+    String S3;
+    strcpy(S3.str , S1.str);
+    strcat(S3.str, S2.str);
+    return S3;
+}
+int main(){
+    String obj1, obj2, obj3;
+    obj1.getString();
+    obj2.getString();
+    obj3=obj1+obj2;
+    obj3.displayString();
+}
