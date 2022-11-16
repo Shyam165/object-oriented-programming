@@ -1,0 +1,89 @@
+#include<iostream>
+using namespace std;
+ template<class T,class T1>
+
+/************c++ program to print the two values using function template**********/
+
+void value(T num1,T1 num2){
+    cout<<"the value of num1 is "<<num1<<endl;
+    cout<<"the value of num2 is "<<num2<<endl;
+    
+}
+int main(){
+int num1;
+float num2;
+char ch;
+cout<<"enter the value of num1 and num2 and ch "<<endl;
+cin>>num1>>num2>>ch;
+value(num1,num2);
+ value(num1,ch);
+ value(num1,num1);
+ value(num2,num2);
+
+}
+
+/*****************overloading function template with normal function********************/
+// note-: we cannot use same template generic type in other template function otherwise it will give error
+// and declare template generic type  always just before the function template if more than one template function is used otherwise it will also give error.
+//  void show( int value1 ){ /// this is normal function
+//      cout<<"the integer value of normal function is "<<value1<<endl;
+//  }
+// template<class t>
+//  void show( t value1){  /// this is template function
+//     cout<<" the value of template function is "<<value1<<endl;
+//  }
+// template<class t1, class t2>
+// void show(t1 value2, t2 value3){   //this is second template function
+//     cout<<" the values of second template function are "<<value2<<" and "<<value3<<endl;
+// }
+// int main(){
+//     int num1;
+//     float num2;
+//     char ch;
+//     cout<<"enter the value of num1 , num2 and ch\n";
+//     cin>>num1>>num2>>ch;
+//     show(num2);
+//     show(num1);
+//     show(num2, ch);
+// }
+
+/********************find smallest number among two numbers************/
+
+// template< class t1, class t2>
+// t2 smallest_number( t1 value1, t2 value2){
+//     t2 temp;
+//     temp=( value1>value2)? value2:value1;
+//     return temp;
+// }
+// int main(){
+//     int num1, num2;
+//     float num3, num4;
+//     cout<<"Enter the integers and float values"<<endl;
+//     cin>>num1>>num2>>num3>>num4;
+//     cout<<"smallest number among two integers numbers is "<<smallest_number(num1, num2)<<endl;
+//      cout<<"smallest number among two float numbers is "<<smallest_number(num3, num4)<<endl;
+//     cout<<"smallest number among two numbers of integers and float is "<<smallest_number(num1, num3)<<endl;
+// }
+
+/**************class template example********************/
+// declare of class template is also as same as for template function
+
+// template<class t1, class t2, class t3> // we can also use typename keyword instead of using keyword class
+// class Sample{
+//     t1 a;
+//     t2 b;
+//     t3 c;
+//     public:
+//     void display1(t1 a, t2 b, t3 c){
+//        cout<<"the value of a is "<<a<<" and the value of b is "<<b<<" and the value of c is "<<c<<endl;
+//     }
+// };
+// int main(){
+//     int value1;
+//     float value2;
+//     char ch;
+//     cout<<"Enter the value1, value2, and ch\n";
+//     cin>>value1>>value2>>ch;
+//     Sample<int, float, char> obj; //here we have specified that what type of data members that is a, c and c -contained by this object
+//     obj.display1(value1, value2, ch);
+// }
