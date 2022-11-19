@@ -1,0 +1,67 @@
+#include<iostream>
+using namespace std;
+
+/*****************class and function template example including the concept of inheritance********************/
+// template<class t>
+// class One{
+//    t num1;
+//    t num2;
+//    public:
+//    One( t a, t b){
+//     num1=a;
+//     num2=b;
+//    }
+//    void show1(){
+//     cout<<"the value of num1 is "<<num1<<" and the value of num2 is "<<num2<<endl;
+//    }
+// };
+// template<class t>
+// class Two: public One<t>{
+//     t num3;
+//     public:
+//     Two( t a, t b, t c):One<t>( a, b){
+//         num3=c;
+//     }
+//     void show2(){
+//         cout<<" the value of num3 is "<<num3<<endl;
+//     }
+// };
+// int  main(){
+//     int value1, value2, value3;
+//     cout<<"Enter the value1, value2, and value3:\n";
+//     cin>>value1>>value2>>value3;
+//     Two<int> obj(value1, value2, value3);
+//     obj.show1();
+//     obj.show2();
+// }
+
+/********************class template with operator overloading binary + by member function*********************/
+
+template<class t>
+class Addition{
+    t num;
+    public:
+    Addition(){
+        num=0;
+    }
+    void read_Data(){
+        cout<<"Enter the value of num:"<<endl;
+        cin>>num;
+    }
+    void display_Data(){
+        cout<<" the value after addition of two  is "<<num<<endl; 
+    }
+    Addition operator +( Addition A1){
+        Addition A2;
+        A2.num=num+A1.num;
+        return A2;
+    }
+};
+int main(){
+    Addition<int> obj1, obj2, obj3;
+    obj1.read_Data();
+    obj2.read_Data();
+    obj3=obj1+obj2;
+    obj3.display_Data();
+}
+
