@@ -1,0 +1,86 @@
+#include<iostream>
+using namespace std;
+
+/***************calculator using switch case and using class template*************/
+
+// template<class T, class T1>
+// class Calculator{
+//     T num1;
+//     T num2;
+//     T1 ch;
+//     public:
+//     Calculator( T a, T b, T1 c){
+//         num1=a;
+//         num2=b;
+//         ch=c;
+//     }
+//     void  Operations(){
+//         switch (ch)
+//         {
+//         case '+': cout<<" the addition is "<<num1+num2<<endl;
+//             break;
+//         case '-': cout<<" the subtraction is "<<num1-num2<<endl;
+//             break;
+//         case '*': cout<<" the multiplication is "<<num1*num2<<endl;
+//             break;
+//         case '/': cout<<" the devision is "<<num1/num2<<endl;
+//             break;    
+//         default:cout<<" enter valid operator"<<endl;
+//         }
+//     }
+// };
+// int main(){
+//     int value1, value2;
+//     char ch;
+//     cout<<"Enter the value1 and value2:\n";
+//     cin>>value1>>value2;
+//     cout<<"Enter the operator which you want to perform the opertion\n";
+//     cin>>ch;
+//     Calculator<int , char>obj(value1, value2, ch);
+//     obj.Operations();
+// }
+
+/*******************Another Method**************/
+
+template<class t>
+class Calculator{
+    t num1;
+    t num2;
+    public:
+    Calculator( t a, t b);
+    t Add();
+    t subs();
+    t mult();
+    t devi();
+};
+template<class t>
+Calculator<t>::Calculator( t a, t b){
+    num1=a;
+    num2=b;
+}
+template <class t>
+t Calculator<t>:: Add(){
+    return num1+num2;
+}
+template<class t>
+t Calculator<t> :: subs(){
+    return num1-num2;
+}
+template<class t>
+t Calculator<t> :: mult(){
+    return num1*num2;
+}
+template<class t>
+t Calculator<t> :: devi(){
+    return num1/num2;
+}
+int main(){
+    int value1, value2;
+    cout<<"Enter the value1 and value2:\n";
+    cin>>value1>>value2;
+    Calculator<int>obj(value1, value2);
+    cout<<"Addition is "<<obj.Add()<<endl;
+    cout<<"substraction is "<<obj.subs()<<endl;
+    cout<<"multiplication is "<<obj.mult()<<endl;
+    cout<<"devision is "<<obj.devi()<<endl;
+}
