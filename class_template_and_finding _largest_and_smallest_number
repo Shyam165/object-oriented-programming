@@ -1,0 +1,47 @@
+//write a c++ prg to find out the largest and the smallest of given three values of same type with class template
+
+%%writefile first.cpp
+#include<iostream>
+using namespace std;
+template<class t1>
+class Numbers{
+  t1 num1, num2, num3;
+  Public:
+  Numbers( t1 a , t1 b, t1 c){
+    num1=a;
+    num2=b;
+    num3=c;
+  }
+  template<class t1>
+ void Largest(){
+    if(num1>num2 && num1>num3){
+      cout<<"num1 is Largest"<<endl;
+    }
+    else if(num2>num3){
+      cout<<"num2 is largest"<<endl;
+    }
+    else{
+      cout<<"num3 is largest"<<endl;
+    }
+  }
+  template<class t1>
+  void Smallest(){
+    if(num1<num2 && num1<num3){
+      cout<<"num1 is smallest"<<endl;
+    }
+    else if(num2<num3){
+      cout<<"num2 is smallest"<<endl;
+    }
+    else{
+      cout<<"num3 is smallest"<<endl;
+    }
+  }
+};
+int main(){
+  int value1, value2, value3;
+  cout<<" enter value1, value2 , value3"<<endl;
+  cin>>value1>>value2>>value3;
+  Numbers<int>obj(value1, value2, value3);
+  obj.Largest();
+  obj.Smallest();
+}
