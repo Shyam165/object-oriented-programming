@@ -1,0 +1,45 @@
+/***********write a c++ prg to find the sum of two objects using operator overloading create a class number
+which consist of one private data member and a defalut which initialize initial and a method read to read the datamem and
+method show to display datamem ,and a operator mem func + used to find the addditon of two object values.*********/
+
+%%writefile third.cpp
+#include<iostream>
+using namespace std;
+template<class t>
+class Number{
+  t num1;
+  public:
+  Number(){
+    num1=0;
+  }
+  void readData(){
+    cout<<" Enter the value of num1\n";
+    cin>>num1;
+  }
+  void displayData(){
+    cout<<" the sum of numbers is "<<num1;
+  }
+  Number operator+( Number S1 ){
+    Number S2;
+    S2.num1= num1+ S1.num1;
+    return S2;
+  }
+};
+int main(){
+  Number<int> obj1;
+  Number<int> obj2;
+  Number<int>obj3;
+  obj1.readData();
+  obj2.readData();
+obj3=obj1+obj2;
+obj3.displayData();
+}
+
+/*********** output is 
+!g++ third.cpp -o third
+! ./third
+Enter the value of num1
+56
+ Enter the value of num1
+67
+ the sum of numbers is 123 ***************/
