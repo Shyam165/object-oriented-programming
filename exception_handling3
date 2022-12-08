@@ -1,0 +1,25 @@
+# object-oriented-programming
+//write a c++ program to handle an exception if voter age is less than 30 the class will throw an exception
+#include<iostream>
+using namespace std;
+class Voters{
+    public:
+    Voters(){
+        cout<<"exception caught\n ";
+    }
+};
+int main(){
+    int age;
+    cout<<" enter the age\n";
+    cin>>age;
+    try{
+        if(age<30){
+            Voters V1;
+           throw age;
+        }
+        cout<<"you can vote";
+    }
+    catch( int x){
+        cout<<" you cannot vote as your age is less than "<<x;
+    }
+}
