@@ -1,0 +1,22 @@
+//write a c++ program to handle an exception of integer type using try, catch and throw
+
+#include<iostream>
+using namespace std;
+class Sample{
+    public:
+    Sample( int x){
+
+        throw x;
+    }
+};
+int main(){
+    int a;
+    cout<<"enter the integer  value of a\n";
+    cin>>a;
+    try{
+        Sample S1(a);
+    }
+    catch(int x){
+        cout<<"exception caught\n"<<x;
+    }
+}
