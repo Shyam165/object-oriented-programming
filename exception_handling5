@@ -1,0 +1,56 @@
+# object-oriented-programming
+//write a c++ program to handle an exception of either integer , character or float value 
+#include<iostream>
+using namespace std;
+class Sample{
+    public:
+    Sample(){
+        cout<<" exception is caught for entered values\n";
+    }
+    void number(int x){
+        throw x;
+    }
+    void number(float y){
+        throw y;
+    }
+    void number( char c){
+        throw c;
+    }
+};
+int main(){
+    int num1;
+    float num2;
+    char ch;
+    cout<<" enter the integer value \n";
+    cin>>num1;
+    cout<<" enter the float  value \n";
+    cin>>num2;
+    cout<<" enter the character value\n";
+    cin>>ch;
+    try{
+        Sample S1; // Sample()  here it can also be called like this without making an object of class Sample
+        S1.number(num1);
+
+    }
+    catch(int x){
+        cout <<" Integer value is  "<<x<<endl ;
+    }
+    try{
+        Sample S2;
+        S2.number(num2);
+
+    }
+    catch(float y){
+        cout <<" Float value is "<<y<<endl ;
+    }
+    try{
+        Sample S3;
+        S3.number(ch);
+
+    }
+    catch(char z){
+        cout <<" character  value  is  "<<z<<endl ;
+    }
+    
+
+}
