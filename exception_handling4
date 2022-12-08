@@ -1,0 +1,25 @@
+# object-oriented-programming
+//write a c++ program to handle an exception of even number 
+#include<iostream>
+using namespace std;
+class Even{
+    public:
+    Even(){
+        cout<<"exception caught\n ";
+    }
+};
+int main(){
+    int num;
+    cout<<" enter the value of num\n";
+    cin>>num;
+    try{
+        if(num%2==0){
+            Even E1;
+           throw num;
+        }
+        cout<<"the number  you have entered in not a even number\n";
+    }
+    catch( int x){
+        cout<<" you have entered even number that is  "<<x;
+    }
+}
